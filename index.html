@@ -22,9 +22,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="my-list-todo">
-
-                    </div>
+                    <ul class="my-list-todo">
+                        <li v-for="(element, index) in todoList" :class="(element.done === true) ? 'text-bar' : ''">{{element.text}}</li>
+                        
+                    </ul>
                 </div>
             </div>
 
