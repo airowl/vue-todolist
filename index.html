@@ -14,6 +14,11 @@
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"> 
+
     <!-- My CSS style -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -23,27 +28,32 @@
 
     <main id="app">
         <div class="container">
-            <div class="row">
+            <div class="row p-5">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h1>ToDoList</h1>
+                        <i class="fa-solid fa-clipboard-list fa-2xl"></i>
+                    </div>
+                </div>
                 <div class="col-12">
                     <ul class="my-list-todo">
-                        <li class="d-flex justify-content-between"  v-for="(element, index) in todoList" :class="(element.done === true) ? 'text-bar' : ''">
+                        <li class="d-flex justify-content-between align-items-center rounded-pill"  v-for="(element, index) in todoList" :class="(element.done === true) ? 'text-bar' : ''">
                             <p @click="clickElementBar(index)">{{element.text}}</p>
-                            <span @click="clickToRemoveTodoElement(index)"><i class="fa-solid fa-xmark"></i></span>
+                            <span @click="clickToRemoveTodoElement(index)"><i class="fa-solid fa-xmark fa-2xl"></i></span>
                         </li>
                         
                     </ul>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="user-input">
-                        <input v-model="todoText" type="email" placeholder="Inserire un ToDo" @keydown.enter="generateTodoElement()">
-                        <button @click="generateTodoElement()"  type="submit" class="btn btn-primary">Add me</button>
-                    </div>
-                </div>
             </div>
         </div>
+
+        <footer class="input-user">
+            <div class="d-flex justify-content-evenly">
+                <input v-model="todoText" type="email" placeholder="Inserire un ToDo" @keydown.enter="generateTodoElement()" class="rounded-pill p-2">
+                <button @click="generateTodoElement()"  type="submit" class="my-btn btn-grad">Aggiungi</button>
+            </div>
+        </footer>
     </main>
     
     <script type="text/javascript" src="js/script.js"></script>

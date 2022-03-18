@@ -18,7 +18,12 @@ const app = new Vue({
     },
     methods: {
         clickElementBar(todoIndex) {
-            this.todoList[todoIndex].done = true;
+            if (this.todoList[todoIndex].done === false) {
+                this.todoList[todoIndex].done = true;
+            } else {
+                this.todoList[todoIndex].done = false;
+            }
+            
         },
 
         clickToRemoveTodoElement(index) {
