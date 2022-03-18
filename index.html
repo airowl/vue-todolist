@@ -38,8 +38,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="user-input">
-                        <input v-model="todoText" type="email">
-                        <button @click="generateTodoElement()" type="submit" class="btn btn-primary">Add me</button>
+                        <input v-model="todoText" type="email" placeholder="Inserire un ToDo" @keydown.enter="generateTodoElement()">
+                        <button @click="generateTodoElement()"  type="submit" class="btn btn-primary">Add me</button>
                     </div>
                 </div>
             </div>
