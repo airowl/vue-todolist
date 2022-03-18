@@ -10,6 +10,10 @@ p{
     font-size: 1.5rem;
 }
 
+.before-todo{
+    margin: 18rem 3rem;
+}
+
 li{
     list-style: none;
     margin: 20px 0;

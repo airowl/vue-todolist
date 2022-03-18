@@ -35,14 +35,16 @@
                         <i class="fa-solid fa-clipboard-list fa-2xl"></i>
                     </div>
                 </div>
-                <div class="col-12">
-                    <ul class="my-list-todo">
+                <div class="col-12 position-relative">
+                    <ul class="my-list-todo" v-if="todoList != ''">
                         <li class="d-flex justify-content-between align-items-center rounded-pill"  v-for="(element, index) in todoList" :class="(element.done === true) ? 'text-bar' : ''">
                             <p @click="clickElementBar(index)">{{element.text}}</p>
                             <span @click="clickToRemoveTodoElement(index)"><i class="fa-solid fa-xmark fa-2xl"></i></span>
                         </li>
-                        
                     </ul>
+                    <div class="before-todo" v-else>
+                        <h1>Inserisci un ToDo...</h1>
+                    </div>
                 </div>
 
             </div>

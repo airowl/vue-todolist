@@ -5,16 +5,7 @@ const app = new Vue({
     data: {
         todoText: '',
 
-        todoList: [
-            {
-                text: 'Ciao sono un task',
-                done: false
-            },
-            {
-                text: 'sono il second task',
-                done: false
-            }
-        ]
+        todoList: []
     },
     methods: {
         clickElementBar(todoIndex) {
