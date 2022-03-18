@@ -26,14 +26,16 @@ const app = new Vue({
         },
 
         generateTodoElement() {
-            const object = {text: `${this.todoText}`, done: false};
-
-            this.todoList.push(object)
-
-            this.todoText = '';
+            //! verificare che l'input non sia vuoto
+            if (this.todoText !== "") {
+                const object = {text: `${this.todoText}`, done: false};
+                this.todoList.push(object)
+                this.todoText = '';
+            } else {
+                alert('ERRORE! Inserire un ToDo');
+            }
+            
         }
 
     }
 });
-
-//! al click della X il li deve sparire
