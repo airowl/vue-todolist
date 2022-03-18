@@ -7,6 +7,10 @@ li{
     height: 50vh;
 }
 
+ul li {
+    cursor: pointer;
+}
+
 ul li.text-bar{
     text-decoration: line-through;
 }

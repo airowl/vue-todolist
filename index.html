@@ -26,9 +26,9 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="my-list-todo">
-                        <li v-for="(element, index) in todoList" :class="(element.done === true) ? 'text-bar' : ''">
+                        <li class="d-flex justify-content-between" @click="clickElementBar(index)" v-for="(element, index) in todoList" :class="(element.done === true) ? 'text-bar' : ''">
                             {{element.text}}
-                            <span></span>
+                            <span><i class="fa-solid fa-xmark"></i></span>
                         </li>
                         
                     </ul>

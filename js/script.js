@@ -6,7 +6,7 @@ const app = new Vue({
         todoList: [
             {
                 text: 'Ciao sono un task',
-                done: true
+                done: false
             },
             {
                 text: 'sono il second task',
@@ -15,6 +15,8 @@ const app = new Vue({
         ]
     },
     methods: {
-
+        clickElementBar(todoIndex) {
+            this.todoList[todoIndex].done = true;
+        }
     }
 });
