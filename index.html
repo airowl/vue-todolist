@@ -28,7 +28,7 @@
                     <ul class="my-list-todo">
                         <li class="d-flex justify-content-between" @click="clickElementBar(index)" v-for="(element, index) in todoList" :class="(element.done === true) ? 'text-bar' : ''">
                             {{element.text}}
-                            <span><i class="fa-solid fa-xmark"></i></span>
+                            <span @click="clickToRemoveTodoElement(index)"><i class="fa-solid fa-xmark"></i></span>
                         </li>
                         
                     </ul>
@@ -38,8 +38,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="user-input">
-                        <input type="email">
-                        <button type="submit" class="btn btn-primary">Add me</button>
+                        <input v-model="todoText" type="email">
+                        <button @click="generateTodoElement()" type="submit" class="btn btn-primary">Add me</button>
                     </div>
                 </div>
             </div>
